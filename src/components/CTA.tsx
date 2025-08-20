@@ -12,6 +12,7 @@ const CTA = () => {
       }
     }
   };
+  
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
