@@ -28,14 +28,14 @@ const Hero = () => {
 
   const diagramToChat = {
     hidden: { width: "0%", opacity: 0 },
-    visible: {
-      width: "100%",
-      opacity: 1,
-      transition: {
-        duration: 1.2,
-        delay: 0.5,
-        ease: "easeInOut"
-      }
+    visible: { 
+      width: "100%", 
+      opacity: 1
+    },
+    transition: { 
+      duration: 1.2, 
+      delay: 0.5, 
+      ease: "easeInOut" 
     }
   };
 
@@ -124,7 +124,7 @@ const Hero = () => {
                 </div>
                 
                 <div className="bg-emerald-50 dark:bg-gray-900 p-3 rounded-lg">
-                  <p className="text-sm mb-2">Here's a flowchart for the user authentication process:</p>
+                  <p className="text-sm mb-2">Here&apos;s a flowchart for the user authentication process:</p>
                   
                   <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded border border-gray-200 dark:border-gray-700 font-mono text-xs overflow-hidden">
                     <pre>{`flowchart TD
@@ -141,7 +141,9 @@ const Hero = () => {
                   
                   <motion.div 
                     className="mt-4 bg-white dark:bg-gray-900 p-3 rounded border border-emerald-200 dark:border-emerald-800"
-                    variants={diagramToChat}
+                    initial={{ width: "0%", opacity: 0 }}
+                    animate={{ width: "100%", opacity: 1 }}
+                    transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
                   >
                     <div className="flex justify-between items-center mb-2">
                       <div className="text-xs font-medium text-emerald-600">Rendered Diagram</div>

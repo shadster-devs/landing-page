@@ -17,12 +17,13 @@ export const metadata: Metadata = {
   description: "Transform your flowcharts into interactive chat experiences with our premium Chrome extension. One-time $10 payment.",
   keywords: ["ChatGPT extension", "Mermaid diagrams", "flowcharts", "Chrome extension", "diagram renderer"],
   authors: [{ name: "Flow2Chat Team" }],
+  metadataBase: new URL("https://flow2chat.com"),
   openGraph: {
     title: "Flow2Chat - Premium Mermaid Diagram Renderer for ChatGPT",
     description: "Transform your flowcharts into interactive chat experiences with our premium Chrome extension. One-time $10 payment.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Flow2Chat Preview",
