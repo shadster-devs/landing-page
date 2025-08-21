@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-xl font-semibold mb-4">Overview</h2>
               <p>
                 This Privacy Policy describes how the Flow2Chat Mermaid Diagram Renderer Chrome extension 
-                (referred to as "we", "us", or "our") handles data.
+                (referred to as &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) handles data.
               </p>
             </section>
 
@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-4">Children's Privacy</h2>
+              <h2 className="text-xl font-semibold mb-4">Children&apos;s Privacy</h2>
               <p>
                 Our extension is not directed at children under the age of 13, and we do not knowingly collect 
                 any personal information from children.

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const Hero = () => {
   // Animation variants
@@ -25,20 +24,7 @@ const Hero = () => {
       }
     }
   };
-
-  const diagramToChat = {
-    hidden: { width: "0%", opacity: 0 },
-    visible: { 
-      width: "100%", 
-      opacity: 1
-    },
-    transition: { 
-      duration: 1.2, 
-      delay: 0.5, 
-      ease: "easeInOut" 
-    }
-  };
-
+  
   return (
     <section className="py-20 md:py-32 px-4">
       <div className="container mx-auto max-w-6xl">
