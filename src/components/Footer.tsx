@@ -112,7 +112,7 @@ const Footer = () => {
         >
           <p>&copy; {new Date().getFullYear()} Flow2Chat. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-4">
-            <Link href="#" className="hover:text-emerald-600 dark:hover:text-emerald-400">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-emerald-600 dark:hover:text-emerald-400">Privacy Policy</Link>
             <Link href="#" className="hover:text-emerald-600 dark:hover:text-emerald-400">Terms of Service</Link>
             <Link href="#" className="hover:text-emerald-600 dark:hover:text-emerald-400">Contact</Link>
           </div>
