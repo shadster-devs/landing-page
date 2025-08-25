@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "next lint"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
+    "lucide-react": "^0.541.0",
+    "mermaid": "^11.10.1",
     "next": "15.4.7",
     "react": "19.1.0",
     "react-dom": "19.1.0"

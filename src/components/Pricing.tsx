@@ -1,0 +1,125 @@
+"use client";
+
+import { motion } from 'framer-motion';
+
+export default function Pricing() {
+  return (
+    <section id="pricing" className="max-w-4xl mx-auto px-4 py-14" tabIndex={-1} role="region" aria-label="Pricing">
+      <motion.h2 
+        className="text-3xl md:text-4xl font-extrabold text-center mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+        Pricing
+      </motion.h2>
+      <motion.p 
+        className="mt-2 text-center text-[var(--muted)]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.7 }}
+      >
+        Simple one‑time purchase. No subscriptions.
+      </motion.p>
+      <div className="mt-8 grid md:grid-cols-2 gap-6">
+        {/* Free Tier */}
+        <PricingTier 
+          title="Free"
+          price="$0"
+          features={[
+            "Flowcharts only",
+            "1 theme",
+            "Minimal permissions",
+            "Regular updates"
+          ]}
+          buttonText="Add to Chrome"
+          buttonLink="https://chromewebstore.google.com/"
+          isPrimary={false}
+          delay={0.3}
+        />
+        
+        {/* Pro Tier */}
+        <PricingTier 
+          title="Pro"
+          price="$10"
+          priceSubtext="one‑time"
+          features={[
+            "All diagram types",
+            "Copy SVG/PNG export",
+            "Theme & shortcut controls",
+            "Priority support"
+          ]}
+          buttonText="Buy on Gumroad"
+          buttonLink="https://gumroad.com/"
+          isPrimary={true}
+          delay={0.5}
+        />
+      </div>
+    </section>
+  );
+}
+
+type PricingTierProps = {
+  title: string;
+  price: string;
+  priceSubtext?: string;
+  features: string[];
+  buttonText: string;
+  buttonLink: string;
+  isPrimary: boolean;
+  className?: string;
+  delay?: number;
+}
+
+function PricingTier({ 
+  title, 
+  price, 
+  priceSubtext, 
+  features, 
+  buttonText, 
+  buttonLink,
+  isPrimary,
+  className = "",
+  delay = 0
+}: PricingTierProps) {
+  return (
+    <motion.div 
+      className={`p-6 rounded-2xl border border-white/10 bg-[var(--card)] ${isPrimary ? 'shadow-glow' : ''} ${className}`}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+    >
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="text-4xl font-extrabold mt-1">
+        {price} {priceSubtext && <span className="text-base font-medium text-[var(--muted)]">{priceSubtext}</span>}
+      </p>
+      <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+        {features.map((feature, index) => (
+          <motion.li 
+            key={index}
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: delay + 0.1 + (index * 0.1), duration: 0.4 }}
+          >
+            ✔ {feature}
+          </motion.li>
+        ))}
+      </ul>
+      <motion.a 
+        href={buttonLink} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="mt-6 inline-flex w-full justify-center px-4 py-2 rounded-xl bg-accent hover:bg-accent-600 text-white font-semibold"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+      >
+        {buttonText}
+      </motion.a>
+    </motion.div>
+  );
+}
