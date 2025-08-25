@@ -53,7 +53,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Render <span className="text-accent">UML Diagrams</span> inside ChatGPT using <span className="text-accent">Mermaid.js</span>
+              Render <span className="text-accent">Diagrams</span> inside ChatGPT using <span className="text-accent">Mermaid.js</span>
             </motion.h1>
             <motion.p 
               className="mt-4 text-lg text-[var(--muted)] max-w-2xl"
@@ -61,7 +61,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Auto‑detects Mermaid code blocks and renders flowcharts, sequence, ER, class, Gantt, state, and more — right in your chat.
+              Auto‑detects Mermaid code blocks and renders flowcharts, Gantt and UML diagrams (class, state, sequence etc.) and more — right in your chat.
             </motion.p>
             <motion.div 
               className="mt-8 flex flex-wrap gap-3"

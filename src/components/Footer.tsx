@@ -107,29 +107,25 @@ export default function Footer() {
               </motion.div>
             </li>
             <li>
-              <motion.a 
-                href="#" 
-                className="hover:text-accent"
-                whileHover={{ x: 5 }}
-              >
-                Terms
-              </motion.a>
+              <motion.div whileHover={{ x: 5 }}>
+                <Link href="/terms" className="hover:text-accent">
+                  Terms
+                </Link>
+              </motion.div>
             </li>
             <li>
-              <motion.a 
-                href="mailto:hello@example.com" 
-                className="hover:text-accent"
-                whileHover={{ x: 5 }}
-              >
-                Contact
-              </motion.a>
+              <motion.div whileHover={{ x: 5 }}>
+                <Link href="/contact" className="hover:text-accent">
+                  Contact
+                </Link>
+              </motion.div>
             </li>
           </ul>
         </motion.div>
       </motion.div>
       
       <motion.div 
-        className=" py-6 text-center text-xs text-[var(--muted)]"
+        className="py-6 text-center text-xs text-[var(--muted)]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

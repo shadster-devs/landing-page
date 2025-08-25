@@ -7,7 +7,8 @@ import {
   Lock, 
   Paintbrush, 
   Rocket, 
-  Monitor 
+  Monitor,
+  Download
 } from 'lucide-react';
 
 export default function Features() {
@@ -52,18 +53,18 @@ export default function Features() {
         />
         <FeatureItem
           icon={<Lock className="h-5 w-5" />}
-          title="Tiny & private"
-          description="Less than 100KB, minimal permissions, no tracking. Fully local."
-        />
-        <FeatureItem
-          icon={<Paintbrush className="h-5 w-5" />}
-          title="Themes & export"
-          description="Choose multiple themes, and export diagrams as SVG or PNG with one click."
+          title="Fast & private"
+          description="Optimized for speed. Less than 100KB, minimal permissions, no tracking. Fully local."
         />
         <FeatureItem
           icon={<Rocket className="h-5 w-5" />}
-          title="Fast & reliable"
-          description="Optimized for speed. Works seamlessly with ChatGPT conversations."
+          title="Custom themes"
+          description="Customize the look and feel of your diagrams."
+        />
+        <FeatureItem
+          icon={<Download className="h-5 w-5" />}
+          title="Easy export"
+          description="Copy/Download diagrams as PNG with one click."
         />
         <FeatureItem
           icon={<Monitor className="h-5 w-5" />}
