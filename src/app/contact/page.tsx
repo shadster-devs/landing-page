@@ -52,7 +52,7 @@ export default function Contact() {
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold mb-6">Contact Us</h1>
         <p className="text-[var(--muted)] text-lg">
-          Have questions or feedback? We'd love to hear from you.
+          Have questions or feedback? We&apos;d love to hear from you.
         </p>
       </motion.div>
 
@@ -78,7 +78,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Message sent!</h3>
-                <p>Thank you for contacting us. We'll get back to you as soon as possible.</p>
+                <p>Thank you for contacting us. We&apos;ll get back to you as soon as possible.</p>
                 <button 
                   className="mt-4 px-5 py-2 rounded-lg border border-accent text-accent"
                   onClick={() => setIsSubmitted(false)}
