@@ -100,7 +100,7 @@ function PricingTier({
 }: PricingTierProps) {
   return (
     <motion.div 
-      className={`p-6 rounded-2xl border border-white/10 bg-[var(--card)] ${isPrimary ? 'shadow-glow' : ''} ${className}`}
+      className={`p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] ${isPrimary ? 'shadow-glow' : ''} ${className}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

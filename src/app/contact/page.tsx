@@ -62,7 +62,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <div className="p-6 rounded-2xl bg-[var(--card)] border border-white/10 h-full">
+          <div className="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] h-full">
             <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
             
             {isSubmitted ? (
@@ -102,7 +102,7 @@ export default function Contact() {
                       name="name"
                       value={formState.name}
                       onChange={handleChange}
-                      className="w-full pl-10 pr-4 py-2 bg-transparent border border-white/10 rounded-lg focus:outline-none focus:border-accent"
+                      className="w-full pl-10 pr-4 py-2 bg-transparent border border-[var(--border)] rounded-lg focus:outline-none focus:border-accent"
                       placeholder="John Doe"
                       required
                     />
@@ -123,7 +123,7 @@ export default function Contact() {
                       name="email"
                       value={formState.email}
                       onChange={handleChange}
-                      className="w-full pl-10 pr-4 py-2 bg-transparent border border-white/10 rounded-lg focus:outline-none focus:border-accent"
+                      className="w-full pl-10 pr-4 py-2 bg-transparent border border-[var(--border)] rounded-lg focus:outline-none focus:border-accent"
                       placeholder="john@example.com"
                       required
                     />
@@ -139,7 +139,7 @@ export default function Contact() {
                     name="subject"
                     value={formState.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-transparent border border-white/10 rounded-lg focus:outline-none focus:border-accent"
+                    className="w-full px-4 py-2 bg-transparent border border-[var(--border)] rounded-lg focus:outline-none focus:border-accent"
                     required
                   >
                     <option value="" disabled>Select a subject</option>
@@ -159,7 +159,7 @@ export default function Contact() {
                     name="message"
                     value={formState.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-transparent border border-white/10 rounded-lg focus:outline-none focus:border-accent"
+                    className="w-full px-4 py-2 bg-transparent border border-[var(--border)] rounded-lg focus:outline-none focus:border-accent"
                     rows={5}
                     placeholder="How can we help you?"
                     required
@@ -197,7 +197,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <div className="p-6 rounded-2xl bg-[var(--card)] border border-white/10 h-full">
+          <div className="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] h-full">
             <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
             
             <div className="space-y-6">
@@ -228,7 +228,7 @@ export default function Contact() {
               </div>
               
               <div className="pt-4">
-                <p className="text-[var(--muted)] text-sm border-t border-white/10 pt-4">
+                <p className="text-[var(--muted)] text-sm border-t border-[var(--border)] pt-4">
                   For Pro users, we offer priority support with faster response times.
                 </p>
               </div>

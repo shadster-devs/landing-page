@@ -71,7 +71,7 @@ function FAQItem({ question, answer, delay = 0 }: FAQItemProps) {
 
   return (
     <motion.div 
-      className="p-4 rounded-2xl bg-[var(--card)] border border-white/10"
+      className="p-4 rounded-2xl bg-[var(--card)] border border-[var(--border)]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

@@ -25,7 +25,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-[var(--card)]/50">
+    <footer className="border-t border-[var(--border)] bg-[var(--card)]/50">
       <motion.div 
         className="max-w-6xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-3 text-sm"
         variants={containerVariants}

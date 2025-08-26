@@ -39,7 +39,7 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-40 backdrop-blur bg-[var(--bg)]/90 border-b border-black/10 dark:border-white/10"
+      className="sticky top-0 z-40 backdrop-blur bg-[var(--bg)]/90 border-b border-[var(--border)]"
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <motion.a 
@@ -93,7 +93,7 @@ export default function Navbar() {
           <motion.button 
             id="themeToggle" 
             aria-label="Toggle theme" 
-            className="px-3 py-2 rounded-lg border border-white/15 text-sm hover:border-white/30"
+            className="px-3 py-2 rounded-lg border border-[var(--border)] text-sm hover:border-[var(--border)]/80"
             whileTap={{ scale: 0.9 }}
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -125,7 +125,7 @@ export default function Navbar() {
             href="https://chromewebstore.google.com/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hidden sm:inline-flex px-3 py-2 rounded-lg border border-white/15 text-sm hover:border-white/30"
+            className="hidden sm:inline-flex px-3 py-2 rounded-lg border border-[var(--border)]/80 text-sm hover:border-[var(--border)]/80"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
