@@ -655,13 +655,13 @@ export default function Editor() {
     <div className="flex flex-col h-[calc(100vh-65px)] overflow-hidden bg-[var(--bg)]">
       {/* Top banner with CTA */}
       <div className="bg-accent text-white py-2 px-4 flex items-center justify-between">
-        <div className="text-sm">Create and share diagrams directly in ChatGPT</div>
+        <div className="text-md">Render diagrams directly in ChatGPT conversations with Flow2Chat extension</div>
         <div className="flex items-center gap-2">
           <motion.a
             href="https://chromewebstore.google.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black text-white text-xs py-1 px-3 rounded hover:bg-gray-800 transition-colors"
+            className="bg-black text-white text-sm py-2 px-3 rounded hover:bg-gray-800 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -669,7 +669,7 @@ export default function Editor() {
           </motion.a>
           <motion.a
             href="/#pricing"
-            className="bg-white text-accent text-xs py-1 px-3 rounded hover:bg-gray-100 transition-colors"
+            className="bg-white text-accent text-sm py-2 px-3 rounded hover:bg-gray-100 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
