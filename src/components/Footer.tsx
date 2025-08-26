@@ -39,28 +39,6 @@ export default function Footer() {
             Flow2Chat
           </div>
           <p className="mt-3 text-[var(--muted)]">Render Mermaid.js inside ChatGPT. Minimal, private, fast.</p>
-          <div className="mt-4 flex gap-3">
-            <motion.a 
-              href="https://chromewebstore.google.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-3 py-2 rounded-lg border border-white/15"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Add to Chrome
-            </motion.a>
-            <motion.a 
-              href="https://gumroad.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-3 py-2 rounded-lg bg-accent text-white"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Buy Pro
-            </motion.a>
-          </div>
         </motion.div>
         
         <motion.div variants={itemVariants}>

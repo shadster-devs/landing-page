@@ -29,10 +29,10 @@ export default function Pricing() {
           title="Free"
           price="$0"
           features={[
-            "Flowcharts only",
-            "1 theme",
-            "Minimal permissions",
-            "Regular updates"
+            "Flowcharts and Gantt charts only",
+            "Default theme",
+            "Regular updates",
+            "Minimal support"
           ]}
           buttonText="Add to Chrome"
           buttonLink="https://chromewebstore.google.com/"
@@ -43,12 +43,13 @@ export default function Pricing() {
         {/* Pro Tier */}
         <PricingTier 
           title="Pro"
-          price="$10"
+          price="$5"
+          originalPrice="$10"
           priceSubtext="one‑time"
           features={[
+            "Everything in Free",
             "All diagram types",
-            "Copy SVG/PNG export",
-            "Theme & shortcut controls",
+            "Custom themes",
             "Priority support"
           ]}
           buttonText="Buy on Gumroad"
@@ -57,6 +58,17 @@ export default function Pricing() {
           delay={0.5}
         />
       </div>
+      
+      {/* Limited time offer banner */}
+      <motion.div 
+        className="mt-6 p-3 bg-accent/10 text-accent rounded-lg text-center text-sm"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+      >
+        <span className="font-semibold">Limited time offer:</span> 50% discount on Pro version!
+      </motion.div>
     </section>
   );
 }
@@ -64,6 +76,7 @@ export default function Pricing() {
 type PricingTierProps = {
   title: string;
   price: string;
+  originalPrice?: string;
   priceSubtext?: string;
   features: string[];
   buttonText: string;
@@ -76,6 +89,7 @@ type PricingTierProps = {
 function PricingTier({ 
   title, 
   price, 
+  originalPrice,
   priceSubtext, 
   features, 
   buttonText, 
@@ -94,9 +108,23 @@ function PricingTier({
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <h3 className="text-xl font-semibold">{title}</h3>
-      <p className="text-4xl font-extrabold mt-1">
-        {price} {priceSubtext && <span className="text-base font-medium text-[var(--muted)]">{priceSubtext}</span>}
-      </p>
+      
+      <div className="mt-1 flex items-baseline">
+        <p className="text-4xl font-extrabold">{price}</p>
+        
+        {originalPrice && (
+          <span className="ml-2 text-xl line-through opacity-70 text-[var(--muted)]">
+            {originalPrice}
+          </span>
+        )}
+        
+        {priceSubtext && (
+          <span className="ml-2 text-base font-medium text-[var(--muted)]">
+            {priceSubtext}
+          </span>
+        )}
+      </div>
+      
       <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
         {features.map((feature, index) => (
           <motion.li 

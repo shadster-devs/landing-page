@@ -2,21 +2,25 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Minus, Plus } from 'lucide-react';
 
 export default function FAQ() {
   const faqItems = [
     {
-      question: "Does it follow ChatGPT's theme?",
-      answer: "Yes. Works in light and dark. This page also supports theme toggle."
+      question: "Can I change the colors of the diagrams?",
+      answer: "Yes. You can also change the theme to a custom one with a Pro license."
     },
     {
-      question: "Firefox / Edge?",
-      answer: "Edge works via Chrome store. Firefox build is on the roadmap."
+      question: "Does it work in Firefox / Edge?",
+      answer: "Yes. Edge works via Chrome store. Firefox build is on the roadmap."
+    },
+    {
+      question: "Does it work in other LLM chat websites?",
+      answer: "No. It works only in ChatGPT for now. Gemini support is on the roadmap."
     },
     {
       question: "Any tracking or analytics?",
-      answer: "No. Flow2Chat has no tracking or analytics. Optional self-host of Mermaid.js."
+      answer: "No. Flow2Chat has no tracking or analytics. It's fully local and private."
     },
     {
       question: "How do I upgrade to Pro?",
@@ -82,9 +86,10 @@ function FAQItem({ question, answer, delay = 0 }: FAQItemProps) {
         <span>{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
+          initial={{ rotate: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <ChevronDown className="text-[var(--muted)]" size={18} />
+          {isOpen ? <Minus className="text-[var(--muted)] font-bold" size={18} /> : <Plus className="text-[var(--muted)] font-bold" size={18} />}
         </motion.div>
       </motion.button>
       
