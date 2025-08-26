@@ -48,7 +48,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="inline-flex h-8 w-8 rounded-xl bg-accent items-center justify-center text-white font-bold shadow-glow">F</span>
+          <img src="/icon.png" alt="Flow2Chat Icon" className="h-8 w-8 rounded-xl shadow-glow" />
           <span className="text-lg font-semibold">Flow2Chat</span>
         </motion.a>
         

@@ -35,7 +35,7 @@ export default function Footer() {
       >
         <motion.div variants={itemVariants}>
           <div className="flex items-center gap-2 text-[var(--text)] font-semibold">
-            <span className="inline-flex h-7 w-7 rounded-lg bg-accent items-center justify-center text-white">F</span>
+            <img src="/icon.png" alt="Flow2Chat Icon" className="h-7 w-7 rounded-lg" />
             Flow2Chat
           </div>
           <p className="mt-3 text-[var(--muted)]">Render Mermaid.js inside ChatGPT. Minimal, private, fast.</p>
