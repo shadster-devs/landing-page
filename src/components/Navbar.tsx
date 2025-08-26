@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Code } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <motion.a 
-          href="#top" 
+          href="/" 
           className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -54,7 +54,7 @@ export default function Navbar() {
         
         <nav className="hidden md:flex items-center gap-6 text-sm text-[var(--muted)]" id="site-nav">
           <motion.a 
-            href="#features" 
+            href="/#features" 
             className="px-3 py-2 rounded-lg font-medium nav-link hover:text-accent hover:bg-accent/10 transition"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -62,7 +62,7 @@ export default function Navbar() {
             Features
           </motion.a>
           <motion.a 
-            href="#pricing" 
+            href="/#pricing" 
             className="px-3 py-2 rounded-lg font-medium nav-link hover:text-accent hover:bg-accent/10 transition"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -70,13 +70,23 @@ export default function Navbar() {
             Pricing
           </motion.a>
           <motion.a 
-            href="#faq" 
+            href="/#faq" 
             className="px-3 py-2 rounded-lg font-medium nav-link hover:text-accent hover:bg-accent/10 transition"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             FAQ
           </motion.a>
+          <Link href="/editor" legacyBehavior passHref>
+            <motion.a
+              className="px-3 py-2 rounded-lg font-medium nav-link bg-accent/10 text-accent hover:bg-accent/20 transition flex items-center gap-1"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Code size={16} />
+            Live Editor
+            </motion.a>
+          </Link>
         </nav>
         
         <div className="flex items-center gap-2">

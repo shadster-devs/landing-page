@@ -6,6 +6,7 @@
   --card: #f7f7f8;
   --text: #111827;
   --muted: #6b7280;
+  --border: rgba(0, 0, 0, 0.1);
   
   /* Custom colors */
   --color-accent: #19C37D;
@@ -18,6 +19,7 @@
   --card: #1a1b26;
   --text: #e5e7eb;
   --muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 /* Scrolling behavior */

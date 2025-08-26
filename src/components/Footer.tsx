@@ -47,7 +47,7 @@ export default function Footer() {
             <li>
               <motion.a 
                 className="footer-link hover:text-accent" 
-                href="#features"
+                href="/#features"
                 whileHover={{ x: 5 }}
               >
                 Features
@@ -56,7 +56,7 @@ export default function Footer() {
             <li>
               <motion.a 
                 className="footer-link hover:text-accent" 
-                href="#pricing"
+                href="/#pricing"
                 whileHover={{ x: 5 }}
               >
                 Pricing
@@ -65,11 +65,18 @@ export default function Footer() {
             <li>
               <motion.a 
                 className="footer-link hover:text-accent" 
-                href="#faq"
+                href="/#faq"
                 whileHover={{ x: 5 }}
               >
                 FAQ
               </motion.a>
+            </li>
+            <li>
+              <motion.div whileHover={{ x: 5 }}>
+                <Link href="/editor" className="hover:text-accent">
+                  Live Editor
+                </Link>
+              </motion.div>
             </li>
           </ul>
         </motion.div>

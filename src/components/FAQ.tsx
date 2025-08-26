@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Minus, Plus } from 'lucide-react';
+import { Minus, Plus } from 'lucide-react';
 
 export default function FAQ() {
   const faqItems = [
