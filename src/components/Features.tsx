@@ -94,7 +94,7 @@ function FeatureItem({ icon, title, description }: FeatureItemProps) {
 
   return (
     <motion.div 
-      className="bg-[var(--card)] border border-white/10 rounded-xl p-6 hover:shadow-sm transition-all"
+      className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 hover:shadow-sm transition-all"
       variants={itemVariants}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >

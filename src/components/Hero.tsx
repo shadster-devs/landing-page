@@ -53,7 +53,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Render <span className="text-accent">Diagrams</span> inside ChatGPT using <span className="text-accent">Mermaid.js</span>
+              Render <span className="text-accent">Diagrams</span> inside <span className="text-accent">ChatGPT</span> using Mermaid.js
             </motion.h1>
             <motion.p 
               className="mt-4 text-lg text-[var(--muted)] max-w-2xl"
@@ -77,11 +77,11 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Add to Chrome — Free
+                Add to Chrome - Free
               </motion.a>
               <motion.a 
                 href="#pricing" 
-                className="px-5 py-3 rounded-xl border border-white/15 font-semibold"
+                className="px-5 py-3 rounded-xl border border-[var(--border)] font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

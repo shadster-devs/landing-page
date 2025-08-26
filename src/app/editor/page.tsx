@@ -665,7 +665,7 @@ export default function Editor() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Add to Chrome — Free
+            Add to Chrome - Free
           </motion.a>
           <motion.a
             href="/#pricing"
