@@ -10,14 +10,12 @@ interface MermaidDiagramProps {
   chart: string;
   theme?: MermaidTheme;
   className?: string;
-  customTheme?: string; // Custom theme as a string
 }
 
 export default function MermaidDiagram({ 
   chart, 
   theme = 'default', 
   className = '',
-  customTheme
 }: MermaidDiagramProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [svgContent, setSvgContent] = useState<string>('');
@@ -25,34 +23,38 @@ export default function MermaidDiagram({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Use exactly the theme that was selected, don't auto-switch based on dark mode
-    const mermaidTheme = theme;
-
-    // Initialize mermaid with configuration
-    const config: any = {
-      startOnLoad: false,
-      theme: mermaidTheme,
-      securityLevel: 'loose',
-      suppressErrorRendering: true,
-      logLevel: 'fatal',
-      fontFamily: 'var(--font-inter, ui-sans-serif, system-ui, -apple-system, sans-serif)',
-      flowchart: { useMaxWidth: true },
-      sequence: { useMaxWidth: true },
-      gantt: { useMaxWidth: true },
-    };
-
-    // Add custom theme CSS if provided
-    if (customTheme && customTheme.trim() !== '') {
-      // Custom theme is handled separately - not through themeVariables
-      // This would be used for a completely custom theme definition
-    }
-
-    mermaid.initialize(config);
-
+    // Debounce rendering to prevent flickering
     const renderChart = async () => {
       setIsLoading(true);
       try {
         setError(null);
+        
+        // Use exactly the theme that was selected, don't auto-switch based on dark mode
+        const mermaidTheme = theme;
+
+        // Initialize mermaid with configuration for crisp rendering
+        const config: any = {
+          startOnLoad: false,
+          theme: mermaidTheme,
+          securityLevel: 'loose',
+          suppressErrorRendering: true,
+          logLevel: 'fatal',
+          fontFamily: 'var(--font-inter, ui-sans-serif, system-ui, -apple-system, sans-serif)',
+          flowchart: { 
+            useMaxWidth: false,  // Don't constrain width for better quality
+            htmlLabels: true     // Use HTML labels for better rendering
+          },
+          sequence: { 
+            useMaxWidth: false,
+            htmlLabels: true 
+          },
+          gantt: { 
+            useMaxWidth: false 
+          },
+        };
+
+
+        mermaid.initialize(config);
         
         // Use a unique ID for each render to avoid conflicts
         const id = `mermaid-${Math.random().toString(36).substring(2, 11)}`;
@@ -68,28 +70,13 @@ export default function MermaidDiagram({
       }
     };
 
-    // Small delay to ensure DOM is ready
+    // Debounced rendering to reduce flickering
     const timer = setTimeout(() => {
       renderChart();
-    }, 10);
+    }, 150); // Single delay, no multiple renders
 
-    // Re-render when theme changes
-    const handleThemeChange = () => {
-      renderChart();
-    };
-
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-      themeToggle.addEventListener('click', handleThemeChange);
-    }
-
-    return () => {
-      clearTimeout(timer);
-      if (themeToggle) {
-        themeToggle.removeEventListener('click', handleThemeChange);
-      }
-    };
-  }, [chart, theme, customTheme]);
+    return () => clearTimeout(timer);
+  }, [chart, theme]); // Removed customTheme to reduce re-renders
 
   if (error) {
     return (
@@ -106,8 +93,13 @@ export default function MermaidDiagram({
 
   if (isLoading) {
     return (
-      <div className={`flex items-center justify-center min-h-[200px] ${className}`}>
-        <div className="animate-spin h-8 w-8 border-4 border-accent border-t-transparent rounded-full"></div>
+      <div className={`flex items-center justify-center min-h-[200px] ${className} opacity-50`}>
+        <div className="w-16 h-16 text-gray-400">
+          {/* Minimal loading indicator */}
+          <svg viewBox="0 0 24 24" fill="none" className="animate-pulse">
+            <path d="M12 2v20M2 12h20" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+          </svg>
+        </div>
       </div>
     );
   }
@@ -116,6 +108,11 @@ export default function MermaidDiagram({
     <div 
       ref={ref} 
       className={`mermaid-diagram ${className}`} 
+      style={{
+        // Ensure crisp SVG rendering at all zoom levels
+        imageRendering: 'crisp-edges',
+        shapeRendering: 'geometricPrecision',
+      }}
       dangerouslySetInnerHTML={{ __html: svgContent }}
     />
   );

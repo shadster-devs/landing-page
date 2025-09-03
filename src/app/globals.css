@@ -137,3 +137,42 @@ a.nav-link[aria-current="page"] {
 details summary::-webkit-details-marker {
   display: none;
 }
+
+/* Grid background for diagram stage - always light for better contrast */
+.grid-bg {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px;
+  background-position: -1px -1px, -1px -1px;
+}
+
+/* Pan/zoom cursor states (matching extension) */
+.pz-grabbing {
+  cursor: grabbing !important;
+}
+
+/* Animation for toast notifications (matching extension) */
+@keyframes fadeInBottom {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-bottom {
+  animation: fadeInBottom 0.3s ease-out forwards;
+}
+
+/* Ensure crisp SVG rendering at all zoom levels */
+.mermaid-diagram svg {
+  shape-rendering: geometricPrecision;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+/* Ensure transforms don't blur SVG content */
+.will-change-transform {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
