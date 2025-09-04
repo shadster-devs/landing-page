@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Moon, Sun, Code } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { URLS } from '@/constants/urls';
 
 export default function Navbar() {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -54,7 +55,7 @@ export default function Navbar() {
         
         <nav className="hidden md:flex items-center gap-6 text-sm text-[var(--muted)]" id="site-nav">
           <motion.a 
-            href="/#features" 
+            href={URLS.FEATURES} 
             className="px-3 py-2 rounded-lg font-medium nav-link hover:text-accent hover:bg-accent/10 transition"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -62,7 +63,7 @@ export default function Navbar() {
             Features
           </motion.a>
           <motion.a 
-            href="/#pricing" 
+            href={URLS.PRICING} 
             className="px-3 py-2 rounded-lg font-medium nav-link hover:text-accent hover:bg-accent/10 transition"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -70,7 +71,7 @@ export default function Navbar() {
             Pricing
           </motion.a>
           <motion.a 
-            href="/#faq" 
+            href={URLS.FAQ} 
             className="px-3 py-2 rounded-lg font-medium nav-link hover:text-accent hover:bg-accent/10 transition"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -131,7 +132,7 @@ export default function Navbar() {
           </motion.button>
           
           <motion.a 
-            href="https://chromewebstore.google.com/" 
+            href={URLS.CHROME_STORE} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="hidden sm:inline-flex px-3 py-2 rounded-lg border border-[var(--border)]/80 text-sm hover:border-[var(--border)]/80"
@@ -142,7 +143,7 @@ export default function Navbar() {
           </motion.a>
           
           <motion.a 
-            href="https://gumroad.com/" 
+            href={URLS.GUMROAD_STORE} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="inline-flex px-4 py-2 rounded-lg bg-accent hover:bg-accent-600 text-sm font-semibold shadow-glow"

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { URLS } from '@/constants/urls';
 
 export default function Hero() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -70,7 +71,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <motion.a 
-                href="https://chromewebstore.google.com/" 
+                href={URLS.CHROME_STORE} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="px-5 py-3 rounded-xl bg-accent hover:bg-accent-600 text-white font-semibold"
@@ -80,7 +81,7 @@ export default function Hero() {
                 Add to Chrome - Free
               </motion.a>
               <motion.a 
-                href="#pricing" 
+                href={URLS.PRICING} 
                 className="px-5 py-3 rounded-xl border border-[var(--border)] font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
