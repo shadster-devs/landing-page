@@ -105,7 +105,7 @@ export default function Hero() {
                 loop
                 playsInline
               >
-                <source src="/example2.mp4" type="video/mp4" />
+                <source src="/example.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
