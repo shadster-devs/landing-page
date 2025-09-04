@@ -8,7 +8,7 @@ export default function FAQ() {
   const faqItems = [
     {
       question: "Can I change the colors of the diagrams?",
-      answer: "Yes. You can also change the theme to a custom one with a Pro license."
+      answer: "Yes. Pro users can choose from multiple built-in themes like Dark, Forest, and Neutral."
     },
     {
       question: "Does it work in Firefox / Edge?",
@@ -24,7 +24,7 @@ export default function FAQ() {
     },
     {
       question: "How do I upgrade to Pro?",
-      answer: "Install the free Chrome extension, then purchase the Pro license via Gumroad to unlock advanced features."
+      answer: "Install the free Chrome extension, purchase a Pro license on Gumroad, then enter your license key in the extension settings to unlock all features."
     }
   ];
   

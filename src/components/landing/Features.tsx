@@ -58,8 +58,8 @@ export default function Features() {
         />
         <FeatureItem
           icon={<Rocket className="h-5 w-5" />}
-          title="Custom themes"
-          description="Customize the look and feel of your diagrams."
+          title="Multiple themes"
+          description="Pro users get Dark, Forest, and Neutral themes for better diagram styling."
         />
         <FeatureItem
           icon={<Download className="h-5 w-5" />}

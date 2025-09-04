@@ -49,8 +49,9 @@ export default function Pricing() {
           features={[
             "Everything in Free",
             "All diagram types",
-            "Custom themes",
-            "Priority support"
+            "Multiple themes (Dark, Forest, Neutral)",
+            "Direct copy/download",
+            "Up to 3 device licenses"
           ]}
           buttonText="Buy on Gumroad"
           buttonLink="https://gumroad.com/"
