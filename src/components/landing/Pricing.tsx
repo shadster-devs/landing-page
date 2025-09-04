@@ -50,7 +50,6 @@ export default function Pricing() {
             "Everything in Free",
             "All diagram types",
             "Multiple themes (Dark, Forest, Neutral)",
-            "Direct copy/download",
             "Up to 3 device licenses"
           ]}
           buttonText="Buy on Gumroad"

@@ -79,12 +79,21 @@ export default function Navbar() {
           </motion.a>
           <Link href="/editor" legacyBehavior passHref>
             <motion.a
-              className="px-3 py-2 rounded-lg font-medium nav-link bg-accent/10 text-accent hover:bg-accent/20 transition flex items-center gap-1"
+              className="px-3 py-2 rounded-lg font-medium nav-link bg-accent/10 hover:bg-accent/20 transition flex items-center gap-1 relative overflow-hidden"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
+              style={{
+                background: 'linear-gradient(90deg, #eeeeee, #19C37D, #eeeeee, #19C37D)',
+                backgroundSize: '200% 100%',
+                animation: 'gradient-flow 2s ease-in-out infinite',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                color: 'transparent'
+              }}
             >
-              <Code size={16} />
-            Live Editor
+              <Code size={16} style={{ color: '#19C37D' }} />
+              Live Editor
             </motion.a>
           </Link>
         </nav>

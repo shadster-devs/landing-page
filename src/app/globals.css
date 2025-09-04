@@ -163,6 +163,19 @@ details summary::-webkit-details-marker {
   animation: fadeInBottom 0.3s ease-out forwards;
 }
 
+/* Moving gradient animation for Live Editor button */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Ensure crisp SVG rendering at all zoom levels */
 .mermaid-diagram svg {
   shape-rendering: geometricPrecision;
