@@ -20,21 +20,11 @@ export default function AdBanner({ position, plan, className = '' }: AdBannerPro
     : ADS_CONFIG.GOOGLE_ADSENSE.SLOTS.BOTTOM_BANNER;
 
   return (
-    <motion.div 
-      className={`ad-container ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      <AdSenseAd 
-        slot={adSlot}
-        format="auto"
-        responsive={true}
-        style={{ 
-          minHeight: position === 'sidebar' ? '250px' : '90px',
-          width: '100%'
-        }}
-      />
-    </motion.div>
+    <AdSenseAd 
+      slot={adSlot}
+      format="auto"
+      responsive={true}
+      className={className}
+    />
   );
 }

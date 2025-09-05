@@ -199,3 +199,28 @@ details summary::-webkit-details-marker {
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
+
+/* Responsive ad containers - only take space when ads load */
+.ad-sidebar-container {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, min-width 0.3s ease;
+}
+
+.ad-sidebar-container:has(.ad-loaded) {
+  width: 320px;
+  min-width: 300px;
+}
+
+/* Bottom ad container */
+.ad-bottom-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.ad-bottom-container:has(.ad-loaded) {
+  height: auto;
+  min-height: 90px;
+}

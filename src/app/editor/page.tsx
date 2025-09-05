@@ -398,11 +398,12 @@ export default function Editor() {
 
       {/* Main content area with resizable panels */}
       <div className="flex flex-1 overflow-hidden editor-container">
-        {/* Sidebar ad for free users (left side) */}
-        {!showTemplates && plan === 'free' && (
-          <div className="w-[320px] min-w-[300px] border-r border-[var(--border)] bg-[var(--card)] p-4">
-            <div className="text-xs text-[var(--muted)] mb-2 text-center">Advertisement</div>
-            <AdBanner position="sidebar" plan={plan} />
+        {/* Left sidebar ad for free users - only takes space if ad loads */}
+        {plan === 'free' && (
+          <div className="ad-sidebar-container border-r border-[var(--border)] bg-[var(--card)]">
+            <div className="p-4 pt-0">
+              <AdBanner position="sidebar" plan={plan} />
+            </div>
           </div>
         )}
 
@@ -488,8 +489,10 @@ export default function Editor() {
 
       </div>
       
-      {/* Bottom ad banner for free users */}
-      <AdBanner position="bottom" plan={plan} className="mx-4 mb-2" />
+      {/* Bottom ad banner for free users - only takes space if ad loads */}
+      <div className="ad-bottom-container mx-4 mb-2">
+        <AdBanner position="bottom" plan={plan} />
+      </div>
 
       {/* Unified toast system */}
       <ToastContainer toasts={toasts} removeToast={removeToast} />
