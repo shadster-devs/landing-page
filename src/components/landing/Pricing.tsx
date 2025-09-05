@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { URLS } from '@/constants/urls';
+import { PRICING_CONFIG } from '@/constants/pricing';
 
 export default function Pricing() {
   return (
@@ -27,35 +28,25 @@ export default function Pricing() {
       <div className="mt-8 grid md:grid-cols-2 gap-6">
         {/* Free Tier */}
         <PricingTier 
-          title="Free"
-          price="$0"
-          features={[
-            "Flowcharts and Gantt charts only",
-            "Default theme",
-            "Regular updates",
-            "Minimal support"
-          ]}
-          buttonText="Add to Chrome"
+          title={PRICING_CONFIG.FREE.TITLE}
+          price={PRICING_CONFIG.FREE.PRICE}
+          features={PRICING_CONFIG.FREE.FEATURES}
+          buttonText={PRICING_CONFIG.FREE.BUTTON_TEXT}
           buttonLink={URLS.CHROME_STORE}
-          isPrimary={false}
+          isPrimary={PRICING_CONFIG.FREE.IS_PRIMARY}
           delay={0.3}
         />
         
         {/* Pro Tier */}
         <PricingTier 
-          title="Pro"
-          price="$5"
-          originalPrice="$10"
-          priceSubtext="one‑time"
-          features={[
-            "Everything in Free",
-            "All diagram types",
-            "Multiple themes (Dark, Forest, Neutral)",
-            "One-time purchase"
-          ]}
-          buttonText="Buy on Gumroad"
+          title={PRICING_CONFIG.PRO.TITLE}
+          price={PRICING_CONFIG.PRO.PRICE}
+          originalPrice={PRICING_CONFIG.PRO.ORIGINAL_PRICE}
+          priceSubtext={PRICING_CONFIG.PRO.PRICE_SUBTEXT}
+          features={PRICING_CONFIG.PRO.FEATURES}
+          buttonText={PRICING_CONFIG.PRO.BUTTON_TEXT}
           buttonLink={URLS.GUMROAD_STORE}
-          isPrimary={true}
+          isPrimary={PRICING_CONFIG.PRO.IS_PRIMARY}
           delay={0.5}
         />
       </div>
@@ -69,8 +60,7 @@ export default function Pricing() {
         transition={{ delay: 0.7, duration: 0.5 }}
       >
         <div className="text-sm text-[var(--text)]">
-          <span className="font-semibold">After purchase:</span> You'll receive a license key via email. 
-          Enter it in the extension settings to activate Pro features.
+          <span className="font-semibold">After purchase:</span> {PRICING_CONFIG.AFTER_PURCHASE_TEXT}
         </div>
         <motion.a 
           href={URLS.ACTIVATE}

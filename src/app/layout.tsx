@@ -6,6 +6,7 @@ import Footer from "@/components/landing/Footer";
 import ThemeInitializer from "@/components/landing/ThemeInitializer";
 import ScrollSpy from "@/components/landing/ScrollSpy";
 import NavbarWrapper from "@/components/landing/NavbarWrapper";
+import { PRICING_CONFIG } from "@/constants/pricing";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Flow2Chat — Render Mermaid in ChatGPT (Chrome Extension)",
+  title: "Flow2Chat — Render Diagrams in ChatGPT",
   description: "Flow2Chat renders Mermaid.js diagrams directly inside ChatGPT. Install free on Chrome. Unlock Pro on Gumroad.",
   icons: {
     icon: [
@@ -28,13 +29,13 @@ export const metadata: Metadata = {
   },
   keywords: ["ChatGPT extension", "Mermaid diagrams", "flowcharts", "Chrome extension", "diagram renderer"],
   authors: [{ name: "Flow2Chat Team" }],
-  metadataBase: new URL("https://flow2chat.com"),
+  metadataBase: new URL("https://www.flow2chat.com"),
   openGraph: {
-    title: "Flow2Chat — Mermaid in ChatGPT",
-    description: "Auto‑render Mermaid diagrams inside ChatGPT. $5 one‑time Pro.",
+      title: "Flow2Chat — Render Diagrams in ChatGPT",
+      description: `Auto‑render Mermaid diagrams inside ChatGPT. ${PRICING_CONFIG.PRO.PRICE} one‑time Pro.`,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/example.mp4",
         width: 1200,
         height: 630,
         alt: "Flow2Chat Preview",
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flow2Chat — Mermaid in ChatGPT",
-    description: "Auto‑render Mermaid diagrams inside ChatGPT. $10 one‑time Pro.",
-    images: ["/og-image.jpg"],
+    title: "Flow2Chat — Render Diagrams in ChatGPT",
+    description: `Auto‑render Mermaid diagrams inside ChatGPT. ${PRICING_CONFIG.PRO.PRICE} one‑time Pro.`,
+    images: ["/example.mp4"],
   }
 };
 
