@@ -17,12 +17,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Flow2Chat — Render Mermaid in ChatGPT (Chrome Extension)",
   description: "Flow2Chat renders Mermaid.js diagrams directly inside ChatGPT. Install free on Chrome. Unlock Pro on Gumroad.",
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '48x48', type: 'image/png' },
+    ],
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   keywords: ["ChatGPT extension", "Mermaid diagrams", "flowcharts", "Chrome extension", "diagram renderer"],
   authors: [{ name: "Flow2Chat Team" }],
   metadataBase: new URL("https://flow2chat.com"),
   openGraph: {
     title: "Flow2Chat — Mermaid in ChatGPT",
-    description: "Auto‑render Mermaid diagrams inside ChatGPT. $10 one‑time Pro.",
+    description: "Auto‑render Mermaid diagrams inside ChatGPT. $5 one‑time Pro.",
     images: [
       {
         url: "/og-image.jpg",
