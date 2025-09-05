@@ -295,7 +295,7 @@ export default function PreviewPanel({
       {/* Match the extension's exact structure */}
       <div className="relative overflow-hidden flex-1">
         <div 
-          className="relative w-full h-[100vh] overflow-hidden cursor-grab border border-gray-200 dark:border-gray-700 bg-white grid-bg" 
+          className="relative w-full h-[100vh] overflow-hidden cursor-grab border border-gray-200 dark:border-gray-700 bg-white grid-bg dark:grid-bg" 
           ref={stageRef}
         >
           {/* Exact same structure as extension - single contentRef with SVG */}

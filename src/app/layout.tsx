@@ -7,6 +7,8 @@ import ThemeInitializer from "@/components/landing/ThemeInitializer";
 import ScrollSpy from "@/components/landing/ScrollSpy";
 import NavbarWrapper from "@/components/landing/NavbarWrapper";
 import { PRICING_CONFIG } from "@/constants/pricing";
+import { ADS_CONFIG } from "@/constants/ads";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,6 +60,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} bg-[var(--bg)] text-[var(--text)]`}>
+        {/* Google AdSense */}
+        {ADS_CONFIG.GOOGLE_ADSENSE.ENABLED && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_CONFIG.GOOGLE_ADSENSE.CLIENT_ID}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+
         {/* Theme and scroll initialization */}
         <ThemeInitializer />
         <ScrollSpy />

@@ -148,6 +148,16 @@ details summary::-webkit-details-marker {
   background-position: -1px -1px, -1px -1px;
 }
 
+/* Grid background for dark mode - preview panel is always light */
+.mermaid-diagram-container[data-theme="dark"] .grid-bg {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.3) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px;
+  background-position: -1px -1px, -1px -1px;
+}
+
 /* Pan/zoom cursor states (matching extension) */
 .pz-grabbing {
   cursor: grabbing !important;
