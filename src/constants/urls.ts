@@ -1,7 +1,7 @@
 // External URLs
 export const URLS = {
   CHROME_STORE: 'https://chromewebstore.google.com/detail/flow2chat/ndmhhobkljhnnealabmahjiifbmhglia',
-  GUMROAD_STORE: 'https://shadsterdevs.gumroad.com/l/flow2chat_pro',
+  GUMROAD_STORE: 'https://shakthisagar.gumroad.com/l/flow2chat_pro',
   
   // Social/Support
   SUPPORT_EMAIL: 'mailto:shakthisagarm5918@gmail.com',
