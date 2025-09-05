@@ -8,6 +8,7 @@ export const URLS = {
   
   // Internal routes
   EDITOR: '/editor',
+  ACTIVATE: '/activate',
   PRICING: '/#pricing',
   FEATURES: '/#features',
   FAQ: '/#faq',

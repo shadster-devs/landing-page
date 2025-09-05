@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { URLS } from '@/constants/urls';
 
 export default function Pricing() {
   return (
@@ -35,7 +36,7 @@ export default function Pricing() {
             "Minimal support"
           ]}
           buttonText="Add to Chrome"
-          buttonLink="https://chromewebstore.google.com/"
+          buttonLink={URLS.CHROME_STORE}
           isPrimary={false}
           delay={0.3}
         />
@@ -53,21 +54,31 @@ export default function Pricing() {
             "One-time purchase"
           ]}
           buttonText="Buy on Gumroad"
-          buttonLink="https://gumroad.com/"
+          buttonLink={URLS.GUMROAD_STORE}
           isPrimary={true}
           delay={0.5}
         />
       </div>
       
-      {/* Limited time offer banner */}
+      {/* Activation info */}
       <motion.div 
-        className="mt-6 p-3 bg-accent/10 text-accent rounded-lg text-center text-sm"
+        className="mt-6 p-4 bg-[var(--card)] border border-[var(--border)] rounded-lg text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.7, duration: 0.5 }}
       >
-        <span className="font-semibold">Limited time offer:</span> 50% discount on Pro version!
+        <div className="text-sm text-[var(--text)]">
+          <span className="font-semibold">After purchase:</span> You'll receive a license key via email. 
+          Enter it in the extension settings to activate Pro features.
+        </div>
+        <motion.a 
+          href={URLS.ACTIVATE}
+          className="inline-flex items-center gap-1 mt-2 text-sm text-accent hover:text-accent-600 transition-colors font-medium"
+          whileHover={{ scale: 1.05 }}
+        >
+          View activation guide →
+        </motion.a>
       </motion.div>
     </section>
   );

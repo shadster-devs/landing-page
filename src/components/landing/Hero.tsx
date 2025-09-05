@@ -62,7 +62,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Auto‑detects Mermaid code blocks and renders flowcharts, Gantt and UML diagrams (class, state, sequence etc.) and more — right in your chat.
+              Auto‑detects Mermaid code blocks and renders flowcharts, Gantt and UML diagrams (class, state, sequence etc.) and more - right in your chat.
             </motion.p>
             <motion.div 
               className="mt-8 flex flex-wrap gap-3"
@@ -87,6 +87,22 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
               >
                 See Pricing
+              </motion.a>
+            </motion.div>
+            
+            {/* Subtle activation guide link */}
+            <motion.div 
+              className="mt-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              <motion.a 
+                href={URLS.ACTIVATE}
+                className="text-sm text-[var(--muted)] hover:text-accent transition-colors inline-flex gap-1 text-accent"
+                whileHover={{ x: 5 }}
+              >
+                Already purchased? View activation guide →
               </motion.a>
             </motion.div>
           </motion.div>
